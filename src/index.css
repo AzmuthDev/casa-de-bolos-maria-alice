@@ -1,0 +1,130 @@
+/* Paleta tirada do cardápio da Casa de Bolos Maria Alice */
+:root {
+  --salvia: #5e6a5a;
+  --salvia-escura: #454f42;
+  --salvia-clara: #a8b0a2;
+  --framboesa: #dc4e70;
+  --framboesa-botao: #c63f64;
+  --framboesa-botao-hover: #b0345a;
+  --framboesa-texto: #b3325a;
+  --blush: #f8ece8;
+  --rosado: #f2d9d6;
+  --creme: #fdf7f3;
+  --tinta: #4d4844;
+  --tinta-suave: #6f6763;
+  --linha: rgba(94, 106, 90, 0.32);
+
+  --f-display: 'Fraunces', 'Georgia', serif;
+  --f-texto: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Escala ~1.25 a partir de 17px */
+  --t-1: 0.875rem;
+  --t0: 1.0625rem;
+  --t1: 1.3125rem;
+  --t2: 1.625rem;
+  --t3: 2.0625rem;
+  --t4: 2.5625rem;
+  --t5: 3.25rem;
+
+  --gutter: clamp(16px, 4vw, 48px);
+  --largura: 1240px;
+  --topo-h: 76px;
+  --raio-g: 32px;
+  --raio-m: 18px;
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--topo-h) + 12px);
+  -webkit-text-size-adjust: 100%;
+}
+
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--f-texto);
+  font-size: var(--t0);
+  line-height: 1.6;
+  color: var(--tinta);
+  background-color: var(--blush);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Grão de papel, bem sutil, como o fundo do cardápio impresso */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.28;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.32 0 0 0 0 0.3 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--f-display);
+  font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  font-weight: 600;
+  color: var(--salvia);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 3px solid var(--framboesa);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

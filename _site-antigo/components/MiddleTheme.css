@@ -1,0 +1,373 @@
+/* Global Colors from the image palette */
+.bg-primrose { background-color: var(--color-primrose); }
+.bg-pinktone { background-color: var(--color-pinktone); }
+.bg-yucca { background-color: var(--color-yucca); }
+.bg-lime { background-color: var(--color-lime); }
+
+.text-primrose { color: var(--color-primrose); }
+.text-pinktone { color: var(--color-pinktone); }
+.text-yucca { color: var(--color-yucca); }
+.text-lime { color: var(--color-lime); }
+.text-white { color: white; }
+
+.strip-with-bg {
+  background-image: url('/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+}
+
+.strip-with-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 151, 160, 0.7); /* Pink tone with transparency */
+  z-index: -1;
+}
+
+.brand-showcase {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.showcase-strip {
+  width: 100%;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.strip-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.strip-label {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+  text-transform: uppercase;
+}
+
+/* 1. PRIMARY LOGO */
+.primary-brand-logo {
+  font-size: 8rem;
+  line-height: 1;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.primary-brand-sub {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+/* 2. GRID 3 */
+.showcase-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+}
+
+.grid-cell {
+  padding: 100px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 400px;
+}
+
+.bg-pinktone, .bg-yucca {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-pinktone::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-pinktone);
+  opacity: 0.4; /* Filtro rosa */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bg-yucca::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-yucca);
+  opacity: 0.4; /* Filtro creme/branco */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.9;
+}
+
+.cell-content {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+
+
+.secondary-logo {
+  font-size: 4rem;
+  line-height: 0.9;
+}
+
+.submark-circular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--color-lime);
+  letter-spacing: 3px;
+}
+
+.submark-arc-top, .submark-arc-bottom {
+  font-size: 14px;
+}
+
+.logo-mark svg {
+  width: 120px;
+  height: 120px;
+}
+
+/* 3. PALETTE */
+.palette-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.palette-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.swatch {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.swatch-hex {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+/* 4. TYPOGRAPHY */
+.typo-name {
+  font-size: 3rem;
+  margin-bottom: 30px;
+}
+
+.typo-alphabet {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  line-height: 1.5;
+  letter-spacing: 4px;
+}
+
+/* 5. MOCKUPS */
+.mockup-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  height: 600px;
+}
+
+.mockup-item {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pink-bag-bg { background-color: #FCE8E9; }
+.green-cookies-bg { background-color: var(--color-lime); }
+.cups-bg { background-color: #6C7A58; /* Darker green from original shadow */ }
+
+/* Paper Bag Mockup */
+.paper-bag {
+  background-color: var(--color-primrose);
+  width: 250px;
+  height: 350px;
+  border-radius: 5px 5px 15px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: -10px 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.paper-bag::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  width: 100%;
+  height: 30px;
+  background-color: var(--color-primrose);
+  clip-path: polygon(0 15px, 50% 0, 100% 15px, 100% 100%, 0 100%);
+}
+
+.bag-text {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  line-height: 0.9;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.small-paper-bag {
+  background-color: var(--color-lime);
+  width: 120px;
+  height: 160px;
+  border-radius: 5px 5px 10px 10px;
+  position: absolute;
+  bottom: 80px;
+  right: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-yucca);
+  box-shadow: -10px 10px 20px rgba(0,0,0,0.1);
+}
+
+.bag-text-small {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+}
+
+/* Loyalty Card Mockup */
+.loyalty-card {
+  background-color: var(--color-pinktone);
+  padding: 30px 40px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  color: var(--color-primrose);
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.card-stamps {
+  display: flex;
+  gap: 15px;
+}
+
+.c-stamp {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+}
+
+.c-stamp.filled {
+  background-color: white;
+  color: var(--color-lime);
+}
+
+.c-stamp svg { width: 24px; height: 24px; }
+
+/* Cups Mockup */
+.paper-cup {
+  width: 180px;
+  height: 250px;
+  clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.pink-cup {
+  background-color: var(--color-primrose);
+  color: var(--color-pinktone);
+  transform: rotate(-10deg);
+  bottom: 100px;
+  right: 150px;
+}
+
+.green-cup {
+  background-color: var(--color-lime);
+  color: var(--color-yucca);
+  transform: rotate(15deg);
+  bottom: 50px;
+  left: 100px;
+}
+
+.cup-text {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  line-height: 0.9;
+  text-align: center;
+  transform: rotate(-90deg); /* Cups text is sideways often, or just standard */
+}
+
+@media (max-width: 1024px) {
+  .primary-brand-logo { font-size: 5rem; }
+  .showcase-grid-3, .mockup-gallery { grid-template-columns: 1fr; }
+  .mockup-gallery { height: auto; }
+  .mockup-item { height: 400px; }
+}

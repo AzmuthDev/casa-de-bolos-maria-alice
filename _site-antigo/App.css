@@ -1,0 +1,27 @@
+.app-container {
+  background-color: var(--color-yucca);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Common Section padding */
+.section {
+  padding: 60px 0;
+}
+
+.section-title {
+  font-size: 32px;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  color: var(--color-text-light);
+  margin-bottom: 40px;
+}

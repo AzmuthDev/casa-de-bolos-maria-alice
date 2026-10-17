@@ -1,0 +1,53 @@
+.menu-categories {
+  background-color: var(--color-yucca);
+}
+
+.menu-header {
+  text-align: left;
+}
+
+.categories-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.category-card {
+  background: var(--color-pinktone); /* changed to flat pinktone */
+  border-radius: 12px;
+  padding: 30px 20px;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  box-shadow: none; /* flat design */
+  transition: transform 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-icon-wrapper {
+  color: white;
+  background-color: var(--color-primrose);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%; /* Make them perfectly round */
+}
+
+.category-name {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  color: var(--color-primrose);
+  letter-spacing: 1px;
+}

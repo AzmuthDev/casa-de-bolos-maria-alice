@@ -1,0 +1,297 @@
+.cafe-manha-page {
+  background-color: #FAF6F0; /* Slightly different cream for bakery feel */
+  color: #333;
+}
+
+/* ── Hero Section ── */
+.cafe-hero {
+  position: relative;
+  height: 85vh;
+  min-height: 600px;
+  background-image: url('/hero-cafe.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Darken for text readability */
+}
+
+.hero-container-cafe {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-content-cafe {
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  padding: 60px;
+  text-align: center;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.hero-tagline {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 14px;
+  color: var(--color-primrose);
+  margin-bottom: 20px;
+}
+
+.hero-title-cafe {
+  font-family: var(--font-heading);
+  font-size: 64px;
+  line-height: 1.1;
+  color: #3C2814;
+  margin-bottom: 25px;
+}
+
+.hero-desc-cafe {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.btn-cafe-primary {
+  padding: 18px 45px;
+  background-color: #3C2814;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-cafe-primary:hover {
+  background-color: var(--color-primrose);
+  transform: translateY(-3px);
+}
+
+/* ── Why Choose Us ── */
+.why-choose {
+  padding: 100px 0;
+  background-color: #FDF9F3;
+  text-align: center;
+}
+
+.section-header-cafe {
+  margin-bottom: 60px;
+}
+
+.icon-leaf {
+  font-size: 30px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.section-header-cafe h2 {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  color: #3C2814;
+  margin-bottom: 15px;
+}
+
+.section-header-cafe p {
+  color: #888;
+  font-size: 18px;
+}
+
+.choose-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.choose-item h3 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: #3C2814;
+  margin-bottom: 15px;
+}
+
+.choose-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ── Product Grid ── */
+.cafe-products {
+  padding: 100px 0;
+}
+
+.products-grid-cafe {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.cafe-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.cafe-card:hover {
+  transform: translateY(-10px);
+}
+
+.cafe-card-img img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.cafe-card-info {
+  padding: 30px;
+  text-align: center;
+}
+
+.cafe-card-info h3 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: #3C2814;
+  margin-bottom: 15px;
+}
+
+.cafe-card-info p {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.btn-cafe-outline {
+  padding: 10px 30px;
+  background: transparent;
+  border: 1px solid #3C2814;
+  color: #3C2814;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-cafe-outline:hover {
+  background: #3C2814;
+  color: white;
+}
+
+/* ── Visit Us ── */
+.visit-us {
+  padding: 100px 0;
+  background-color: #FDF9F3;
+}
+
+.visit-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.visit-text {
+  flex: 1;
+}
+
+.visit-text h2 {
+  font-family: var(--font-heading);
+  font-size: 42px;
+  color: #3C2814;
+  margin-bottom: 25px;
+}
+
+.visit-text p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.visit-gallery {
+  flex: 1.5;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 15px;
+}
+
+.gallery-main img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.gallery-side {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.gallery-side img {
+  width: 100%;
+  height: 192px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero-content-cafe {
+    padding: 40px;
+    max-width: 90%;
+  }
+  .hero-title-cafe {
+    font-size: 48px;
+  }
+  .choose-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .visit-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-grid-cafe {
+    grid-template-columns: 1fr;
+  }
+  .visit-gallery {
+    grid-template-columns: 1fr;
+  }
+  .gallery-side {
+    flex-direction: row;
+  }
+  .gallery-side img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title-cafe {
+    font-size: 36px;
+  }
+  .hero-content-cafe {
+    padding: 30px 20px;
+  }
+  .gallery-side {
+    flex-direction: column;
+  }
+}

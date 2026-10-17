@@ -1,0 +1,112 @@
+:root {
+  --color-primrose: #F297A0;
+  --color-pinktone: #F9D0CE;
+  --color-lime: #B6BB79;
+  --color-yucca: #F3EBD8;
+  
+  /* Derived colors for UI flat theme */
+  --color-text: #666; /* Softer text color */
+  --color-text-light: #999;
+  --color-bg-light: #F3EBD8; /* Changed to yucca for base */
+  --color-primary: #F297A0; /* Make primary the primrose pink */
+  --color-primary-hover: #E8838D;
+  --color-brown: #B6BB79; /* use green as the contrast tone */
+
+  --font-sans: 'Outfit', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-heading: 'Cormorant Garamond', serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-yucca);
+  color: var(--color-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Use elegant serif font for all major titles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-lime); /* Default heading color */
+  letter-spacing: 0.5px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Flat Utilities */
+.btn-primary {
+  background-color: var(--color-lime);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px; /* Flat rounded, not pill */
+  font-family: var(--font-heading);
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, filter 0.2s;
+  box-shadow: none; /* No shadow */
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(0.9);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Global Logo Classes */
+.site-logo {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: contrast(1.1) brightness(1.1);
+  transition: transform 0.3s ease;
+}
+
+.site-logo:hover {
+  transform: scale(1.05);
+}
+
+.site-logo-footer {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 15px;
+  mix-blend-mode: multiply;
+}
+
+.middle-primary-logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
