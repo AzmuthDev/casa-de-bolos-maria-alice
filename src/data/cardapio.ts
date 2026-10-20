@@ -5,7 +5,7 @@ import type { CakeLook } from '../three/types';
 // Número no formato internacional, só dígitos (55 + DDD + número).
 export const WHATSAPP_NUMBER = '5531993271326';
 export const WHATSAPP_DISPLAY = '(31) 99327-1326';
-export const INSTAGRAM_HANDLE = 'casadebolosmariaalice';
+export const INSTAGRAM_HANDLE = 'casadebolomariaalice';
 export const INSTAGRAM_URL = `https://www.instagram.com/${INSTAGRAM_HANDLE}/`;
 
 /* ── Cardápio ────────────────────────────────────────────── */
