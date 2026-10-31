@@ -871,3 +871,103 @@
     justify-content: flex-end;
   }
 }
+
+/* Fotos reais dos bolos */
+.sabor-cor--foto {
+  width: 28px;
+  height: 28px;
+  background-size: cover;
+  background-position: center;
+}
+.item-foto {
+  flex: none;
+  align-self: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0 2px #fff, 0 2px 6px rgba(69, 79, 66, 0.18);
+  transition: transform 0.25s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+.item--ativo .item-foto {
+  transform: scale(1.12);
+}
+.detalhe-cabeca--foto {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 16px;
+}
+.detalhe-foto {
+  position: relative;
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  background: none;
+  cursor: zoom-in;
+}
+.detalhe-foto img {
+  display: block;
+  width: 112px;
+  height: 112px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 0 0 3px #fff, 0 6px 16px rgba(69, 79, 66, 0.22);
+  transition: transform 0.2s;
+}
+.detalhe-foto:hover img {
+  transform: scale(1.04);
+}
+.detalhe-foto-selo {
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--framboesa-botao);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.foto-ampliada {
+  position: fixed;
+  inset: 0;
+  width: min(92vw, 640px);
+  max-width: none;
+  height: fit-content;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--creme);
+  cursor: zoom-out;
+}
+.foto-ampliada::backdrop {
+  background: rgba(40, 46, 39, 0.7);
+}
+.foto-ampliada img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.foto-ampliada .folha-fechar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+@media (max-width: 520px) {
+  .item-foto {
+    width: 36px;
+    height: 36px;
+  }
+  .detalhe-foto img {
+    width: 88px;
+    height: 88px;
+  }
+}

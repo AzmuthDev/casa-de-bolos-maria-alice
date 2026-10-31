@@ -32,6 +32,7 @@ export default function Hero() {
               const swatch = {
                 '--miolo': c.look.crumb,
                 '--cobertura': c.look.glaze?.color ?? (c.look.coconutCoat ? '#ffffff' : c.look.crust),
+                ...(c.photo ? { backgroundImage: `url(${c.photo})` } : {}),
               } as CSSProperties;
               return (
                 <button
@@ -41,7 +42,7 @@ export default function Hero() {
                   aria-pressed={id === cakeId}
                   onClick={() => setCakeId(id)}
                 >
-                  <span className="sabor-cor" style={swatch} aria-hidden="true" />
+                  <span className={c.photo ? 'sabor-cor sabor-cor--foto' : 'sabor-cor'} style={swatch} aria-hidden="true" />
                   {c.name}
                 </button>
               );

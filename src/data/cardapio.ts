@@ -26,7 +26,12 @@ export interface Cake {
   category: CategoryId;
   description: string;
   look: CakeLook;
+  /** Foto de verdade do bolo (arquivo em public/bolos/). */
+  photo?: string;
 }
+
+/** Caminho de uma foto em public/bolos/ que funciona em qualquer endereço do site. */
+const foto = (arquivo: string) => `${import.meta.env.BASE_URL}bolos/${arquivo}.webp`;
 
 export const categories: Category[] = [
   { id: 'tradicionais', name: 'Bolos tradicionais' },
@@ -55,6 +60,7 @@ export const cakes: Cake[] = [
     category: 'tradicionais',
     description: 'O bolo da tarde de toda casa mineira: massa de fubá fofinha e douradinha.',
     look: { shape: 'bundt', ...FUBA, topping: { kind: 'sugar' } },
+    photo: foto('fuba'),
   },
   {
     id: 'fuba-goiabada',
@@ -64,6 +70,7 @@ export const cakes: Cake[] = [
     category: 'tradicionais',
     description: 'Massa de fubá com pedacinhos de goiabada que derretem no forno.',
     look: { shape: 'bundt', ...FUBA, inclusion: 'goiabada', topping: { kind: 'goiabada' } },
+    photo: foto('fuba-goiabada'),
   },
   {
     id: 'milho',
@@ -73,6 +80,7 @@ export const cakes: Cake[] = [
     category: 'tradicionais',
     description: 'Bolo de milho cremoso, com gostinho de fazenda.',
     look: { shape: 'round', ...MILHO, topping: { kind: 'none' } },
+    photo: foto('milho'),
   },
   {
     id: 'milho-requeijao',
@@ -82,6 +90,7 @@ export const cakes: Cake[] = [
     category: 'tradicionais',
     description: 'Bolo de milho com um veio cremoso de requeijão no meio.',
     look: { shape: 'round', ...MILHO, inclusion: 'requeijao', topping: { kind: 'none' } },
+    photo: foto('milho'),
   },
   {
     id: 'broa-italiana',
@@ -91,6 +100,7 @@ export const cakes: Cake[] = [
     category: 'tradicionais',
     description: 'Fubá, requeijão e coco numa broa de casquinha crocante.',
     look: { shape: 'loaf', crumb: '#EDC46E', crust: '#B97434', inclusion: 'coco', topping: { kind: 'toasted-coconut' } },
+    photo: foto('broa-italiana'),
   },
   {
     id: 'laranja',
@@ -100,6 +110,7 @@ export const cakes: Cake[] = [
     category: 'tradicionais',
     description: 'Massa leve feita com laranja e uma caldinha brilhante por cima.',
     look: { shape: 'bundt', ...CITRICO, glaze: { color: '#F5B860', drips: 0.6 }, topping: { kind: 'citrus', color: '#F7932A' } },
+    photo: foto('laranja'),
   },
   {
     id: 'mexerica',
@@ -127,6 +138,7 @@ export const cakes: Cake[] = [
     category: 'tradicionais',
     description: 'Banana madura, farinha integral e canela. Docinho na medida.',
     look: { shape: 'loaf', ...INTEGRAL, inclusion: 'banana', topping: { kind: 'banana' } },
+    photo: foto('banana'),
   },
   {
     id: 'maca-integral',
@@ -163,6 +175,7 @@ export const cakes: Cake[] = [
     category: 'tradicionais',
     description: 'Doce de leite por cima e casquinha de açúcar com canela.',
     look: { shape: 'bundt', crumb: '#E9B76A', crust: '#B2702E', glaze: { color: '#8E521E', drips: 0.8 }, topping: { kind: 'cinnamon-sugar' } },
+    photo: foto('churros'),
   },
 
   /* Especiais */
@@ -192,6 +205,7 @@ export const cakes: Cake[] = [
     category: 'especiais',
     description: 'Bolo de cenoura com gotas de chocolate na massa e por cima.',
     look: { shape: 'bundt', ...CENOURA, inclusion: 'gotas', topping: { kind: 'chips' } },
+    photo: foto('cenoura-gotas'),
   },
   {
     id: 'chocolate',
@@ -201,6 +215,7 @@ export const cakes: Cake[] = [
     category: 'especiais',
     description: 'Massa de chocolate escura, macia e bem chocolatuda.',
     look: { shape: 'bundt', ...CHOCOLATE, topping: { kind: 'none' } },
+    photo: foto('chocolate'),
   },
   {
     id: 'chocolate-cobertura',
@@ -210,6 +225,7 @@ export const cakes: Cake[] = [
     category: 'especiais',
     description: 'Bolo de chocolate com cobertura brilhante e granulado.',
     look: { shape: 'bundt', ...CHOCOLATE, glaze: { color: GANACHE, drips: 1 }, topping: { kind: 'sprinkles', color: '#2A160F' } },
+    photo: foto('chocolate'),
   },
   {
     id: 'limao',
@@ -228,6 +244,7 @@ export const cakes: Cake[] = [
     category: 'especiais',
     description: 'Bolo de limão com uma camada generosa de mousse de limão.',
     look: { shape: 'round', ...LIMAO, mousse: '#E6EDA8', topping: { kind: 'lime' } },
+    photo: foto('limao-mousse'),
   },
 
   /* Coco */
@@ -239,6 +256,7 @@ export const cakes: Cake[] = [
     category: 'coco',
     description: 'Massa branquinha recheada e coberta de coco ralado. O queridinho da casa.',
     look: { shape: 'round', crumb: '#FBF1DD', crust: '#F3E6CB', inclusion: 'creme', coconutCoat: true, topping: { kind: 'none' } },
+    photo: foto('coco'),
   },
 ];
 

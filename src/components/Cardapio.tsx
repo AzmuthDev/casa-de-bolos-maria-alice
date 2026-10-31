@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type MouseEvent } from 'react';
-import { Hand, Minus, Plus, X } from 'lucide-react';
+import { Camera, Hand, Minus, Plus, X } from 'lucide-react';
 import { cakes, categories, formatPrice, getCake, orderMessage, whatsappUrl, type Cake } from '../data/cardapio';
 import { useMediaQuery } from '../hooks';
 import CakeCanvas from './CakeCanvas';
@@ -69,7 +69,11 @@ export default function Cardapio() {
                           onFocus={() => preview(c.id)}
                           onClick={() => choose(c.id)}
                         >
-                          <HeartMark className="item-coracao" size={13} />
+                          {c.photo ? (
+                            <img className="item-foto" src={c.photo} alt="" width={44} height={44} loading="lazy" />
+                          ) : (
+                            <HeartMark className="item-coracao" size={13} />
+                          )}
                           <span className="item-nome">{c.name}</span>
                           <span className="item-pontos" aria-hidden="true" />
                           <span className="item-preco">{formatPrice(c.price)}</span>
@@ -100,15 +104,50 @@ export default function Cardapio() {
 
 function BoloDetalhe({ cake, titleId }: { cake: Cake; titleId?: string }) {
   const [qtd, setQtd] = useState(1);
+  const fotoRef = useRef<HTMLDialogElement>(null);
   const category = categories.find((c) => c.id === cake.category)?.name;
 
   return (
     <div className="detalhe">
-      <p className="detalhe-categoria">{category}</p>
-      <h3 className="detalhe-nome" id={titleId}>
-        {cake.name}
-      </h3>
-      <p className="detalhe-descricao">{cake.description}</p>
+      <div className={cake.photo ? 'detalhe-cabeca detalhe-cabeca--foto' : 'detalhe-cabeca'}>
+        <div>
+          <p className="detalhe-categoria">{category}</p>
+          <h3 className="detalhe-nome" id={titleId}>
+            {cake.name}
+          </h3>
+          <p className="detalhe-descricao">{cake.description}</p>
+        </div>
+        {cake.photo && (
+          <button
+            type="button"
+            className="detalhe-foto"
+            onClick={() => fotoRef.current?.showModal()}
+            aria-label={`Ver foto de verdade: ${cake.orderName}`}
+          >
+            <img src={cake.photo} alt="" width={112} height={112} />
+            <span className="detalhe-foto-selo">
+              <Camera size={13} aria-hidden="true" />
+              Foto real
+            </span>
+          </button>
+        )}
+      </div>
+      {cake.photo && (
+        <dialog
+          ref={fotoRef}
+          className="foto-ampliada"
+          aria-label={`Foto: ${cake.orderName}`}
+          onClick={(e) => {
+            e.stopPropagation();
+            e.currentTarget.close();
+          }}
+        >
+          <img src={cake.photo} alt={`Foto do ${cake.orderName}`} width={720} height={720} />
+          <button type="button" className="folha-fechar" aria-label="Fechar foto">
+            <X size={20} />
+          </button>
+        </dialog>
+      )}
       <div className="detalhe-compra">
         <p className="detalhe-preco">
           {formatPrice(cake.price * qtd)}
