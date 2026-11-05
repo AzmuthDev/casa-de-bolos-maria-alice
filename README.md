@@ -17,7 +17,8 @@ Tudo que muda com frequência fica em `src/data/cardapio.ts`:
 - **WhatsApp**: `WHATSAPP_NUMBER` (só dígitos: 55 + DDD + número) e `WHATSAPP_DISPLAY` (como aparece no rodapé).
 - **Instagram**: `INSTAGRAM_HANDLE`.
 - **Bolos e preços**: lista `cakes`. Cada bolo tem `name` (como aparece no cardápio), `orderName` (como vai na mensagem do WhatsApp), `price`, `category`, `description` e `look` (aparência 3D).
-- **Bolos do topo da página**: `heroCakeIds`.
+- **Fotos reais**: campo `photo` de cada bolo (arquivos em `public/bolos/`). A galeria "Saídos do nosso forno" fica em `src/components/Cozinha.tsx`.
+- **Vídeo do topo**: `public/video/calda-chocolate.mp4` (e a imagem `calda-chocolate.jpg`, usada enquanto carrega).
 - **Mensagem do pedido**: função `orderMessage`.
 
 ### Aparência 3D de um bolo (`look`)

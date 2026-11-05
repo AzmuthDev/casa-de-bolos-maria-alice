@@ -40,7 +40,7 @@ export default function Contato() {
 
       <footer className="rodape">
         <div className="rodape-inner">
-          <img className="rodape-logo" src="/logo-maria-alice.png" alt="Casa de Bolos Maria Alice" width={656} height={374} />
+          <img className="rodape-logo" src={`${import.meta.env.BASE_URL}logo-maria-alice.png`} alt="Casa de Bolos Maria Alice" width={656} height={374} />
           <dl className="rodape-contato">
             <div>
               <dt>WhatsApp</dt>

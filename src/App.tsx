@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
+import Cozinha from './components/Cozinha';
 import Cardapio from './components/Cardapio';
 import ComoEncomendar from './components/ComoEncomendar';
 import Contato from './components/Contato';
@@ -14,6 +15,7 @@ export default function App() {
       <Header />
       <main>
         <Hero />
+        <Cozinha />
         <Cardapio />
         <ComoEncomendar />
       </main>
