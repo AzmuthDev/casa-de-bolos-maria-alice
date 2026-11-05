@@ -13,10 +13,10 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`topo ${scrolled ? 'topo--rolado' : ''}`}>
+    <header className={`topo ${scrolled ? 'topo--rolado' : 'topo--video'}`}>
       <div className="topo-inner">
         <a href="#inicio" className="topo-logo" aria-label="Casa de Bolos Maria Alice, voltar ao início">
-          <img src="/logo-maria-alice.png" alt="" width={656} height={374} />
+          <img src={`${import.meta.env.BASE_URL}logo-maria-alice.png`} alt="" width={656} height={374} />
         </a>
         <nav className="topo-nav" aria-label="Principal">
           <ul>

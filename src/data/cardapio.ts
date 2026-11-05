@@ -260,9 +260,6 @@ export const cakes: Cake[] = [
   },
 ];
 
-/** Bolos que aparecem para girar no topo da página. */
-export const heroCakeIds = ['chocolate-cobertura', 'fuba-goiabada', 'coco', 'laranja', 'cenoura-cobertura'];
-
 export const getCake = (id: string) => cakes.find((c) => c.id === id) ?? cakes[0];
 
 /* ── Pedido pelo WhatsApp ────────────────────────────────── */

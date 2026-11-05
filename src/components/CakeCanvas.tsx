@@ -48,7 +48,7 @@ export default function CakeCanvas({ cakeId, mode, label, introDelay, prewarm, c
   if (!supported) {
     return (
       <div className={`cake-host cake-host--fallback ${className}`} role="img" aria-label={label}>
-        <img src="/favicon-bolo.png" alt="" width={96} height={96} />
+        <img src={`${import.meta.env.BASE_URL}favicon-bolo.png`} alt="" width={96} height={96} />
       </div>
     );
   }
